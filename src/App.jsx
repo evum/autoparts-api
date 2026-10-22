@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { articleChanged, brandSelected, fetchManufacturers } from './store/manufacturersSlice.js';
 import Loader from './components/Loader.jsx';
+import Offers from './components/Offers.jsx';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -87,7 +88,7 @@ export default function App() {
                       <button
                         key={brand}
                         className={`manufacturer-button btn d-flex align-items-center justify-content-between text-start ${selectedBrand === brand ? 'selected' : ''}`}
-                        onClick={() => dispatch(brandSelected(brand))}
+                        onClick={() => { if (selectedBrand !== brand) dispatch(brandSelected(brand)); }}
                         aria-pressed={selectedBrand === brand}
                       >
                         <span className="fw-semibold">{brand}</span>
@@ -105,6 +106,7 @@ export default function App() {
             </p>
           )}
         </section>
+        {selectedBrand && <Offers article={article} brand={selectedBrand} />}
         <p className="small text-secondary mt-3">Данные сервиса «Фаворит»</p>
       </main>
     </div>

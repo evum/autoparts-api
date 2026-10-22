@@ -10,7 +10,7 @@
 
 body { margin: 0; background: #f3f6f8; }
 .app-shell { min-height: 100vh; }
-.page-width { max-width: 840px; }
+.page-width { max-width: 1120px; }
 .app-header { padding: 20px 0; background: #fff; border-bottom: 1px solid #e0e7eb; }
 .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: #176756; color: white; font-weight: 800; }
 .brand-dot { color: #176756; }
@@ -27,5 +27,21 @@ h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); letter-spacing: -.04em; }
 .manufacturer-button:focus-visible { outline: 3px solid #176756; outline-offset: 3px; box-shadow: none; }
 .selection-indicator { flex-shrink: 0; font-size: 1.2rem; color: #176756; }
 .selection-message { padding: 16px; border-radius: 10px; background: #edf7f2; color: #145544; overflow-wrap: anywhere; }
+.offers-table { min-width: 720px; font-size: .9rem; }
+.offers-table th { padding-block: 14px; color: #667684; font-size: .8rem; font-weight: 600; }
+.offers-table td { padding-block: 16px; overflow-wrap: anywhere; }
+.offer-detail { width: 40%; min-width: 230px; }
+.original-badge { background: #edf7f2; color: #145544; }
+@media (min-width: 576px) { .manufacturer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 992px) { .manufacturer-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 767px) {
+  .offers-table { min-width: 0; }
+  .offers-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+  .offers-table tbody { display: block; }
+  .offers-table tbody tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 12px; padding: 16px; border: 1px solid #e0e7eb; border-radius: 10px; }
+  .offers-table td { display: block; padding: 0; border: 0; min-width: 0; text-align: left !important; white-space: normal !important; }
+  .offers-table td[data-label]::before { content: attr(data-label); display: block; margin-bottom: 4px; color: #667684; font-size: .75rem; font-weight: 400; }
+  .offers-table .offer-detail { grid-column: 1 / -1; width: auto; min-width: 0; }
+}
 @media (max-width: 480px) { .app-header .small { max-width: 100px; text-align: right; } }
 @media (prefers-reduced-motion: reduce) { .spinner-border { animation: none; } }
