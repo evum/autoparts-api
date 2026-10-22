@@ -1,0 +1,31 @@
+:root {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #182a3b;
+  background: #f3f6f8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --bs-primary: #176756;
+  --bs-body-color: #182a3b;
+}
+
+body { margin: 0; background: #f3f6f8; }
+.app-shell { min-height: 100vh; }
+.page-width { max-width: 840px; }
+.app-header { padding: 20px 0; background: #fff; border-bottom: 1px solid #e0e7eb; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: #176756; color: white; font-weight: 800; }
+.brand-dot { color: #176756; }
+.step-label { color: #176756; font-size: .75rem; font-weight: 700; letter-spacing: .08em; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); letter-spacing: -.04em; }
+.intro-text { max-width: 550px; line-height: 1.7; }
+.search-panel { background: white; border: 1px solid #e0e7eb; border-radius: 16px; box-shadow: 0 8px 32px #182a3b05; }
+.form-control { border-color: #cbd6dd; }
+.form-control:focus { border-color: #176756; box-shadow: 0 0 0 .25rem #17675620; }
+.results { border-top: 1px solid #e9eef1; }
+.manufacturer-button { padding: 16px 20px; border: 1px solid #dbe4e9; border-radius: 10px; color: #182a3b; overflow-wrap: anywhere; gap: 16px; }
+.manufacturer-button:hover { border-color: #176756; background: #f4faf7; }
+.manufacturer-button.selected { border-color: #176756; background: #edf7f2; color: #145544; }
+.manufacturer-button:focus-visible { outline: 3px solid #176756; outline-offset: 3px; box-shadow: none; }
+.selection-indicator { flex-shrink: 0; font-size: 1.2rem; color: #176756; }
+.selection-message { padding: 16px; border-radius: 10px; background: #edf7f2; color: #145544; overflow-wrap: anywhere; }
+@media (max-width: 480px) { .app-header .small { max-width: 100px; text-align: right; } }
+@media (prefers-reduced-motion: reduce) { .spinner-border { animation: none; } }
